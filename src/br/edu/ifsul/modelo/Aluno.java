@@ -8,12 +8,17 @@ package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -44,6 +49,15 @@ public class Aluno implements Serializable{
     @Temporal(TemporalType.DATE)
     @Column(name = "nascimento", nullable = false)
     private Calendar nascimento;
+    
+    @ManyToMany
+    @JoinTable(name = "matricula", 
+	joinColumns = 
+	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false), 
+	inverseJoinColumns = 
+	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false)
+    )
+    private Set<Disciplina> listaMatriculam = new HashSet<>();//fazer a relação com a classe Disciplina sendo que é uma relação muito para muitos
 
     public Aluno() {
     }
@@ -78,6 +92,15 @@ public class Aluno implements Serializable{
 
     public void setNascimento(Calendar nascimento) {
 	this.nascimento = nascimento;
+    }
+    
+     public void adicionarDisciplinaMatricula(Disciplina d){
+	listaMatriculam.add(d);
+	
+    }
+    
+    public void removerDisciplinaMatricula(Disciplina d){
+	listaMatriculam.remove(d);
     }
 
     @Override

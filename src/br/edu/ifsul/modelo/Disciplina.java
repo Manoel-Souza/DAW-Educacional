@@ -8,8 +8,10 @@ package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +22,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -62,6 +66,15 @@ public class Disciplina implements Serializable{
     @JoinColumn(name = "curso", referencedColumnName = "id", nullable = false)//objeto
     @ForeignKey(name = "fk_curso")
     private Curso curso;
+    
+    @ManyToMany
+    @JoinTable(name = "matricula", 
+	joinColumns = 
+	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false), 
+	inverseJoinColumns = 
+	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)
+    )
+    private Set<Aluno> listaMatricula = new HashSet<>();//fazer a relação com a classe aluno sendo que é uma relação muito para muitos
 
     public Disciplina() {
     }
@@ -104,6 +117,11 @@ public class Disciplina implements Serializable{
 
     public void setConhecimentosMininos(String conhecimentosMininos) {
 	this.conhecimentosMininos = conhecimentosMininos;
+    }
+
+    public void adicionarProdutoDesejo(Aluno a){
+	listaMatricula.add(a);
+	//p.adicionarPessoaDesejo(this);
     }
     
 //    public List<Nota> getNota() {
