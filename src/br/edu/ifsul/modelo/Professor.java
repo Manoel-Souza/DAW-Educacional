@@ -14,12 +14,14 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 @Entity
+@Table(name = "professor")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Professor extends Aluno implements Serializable{ //  extensão Aluno (Herança)
     

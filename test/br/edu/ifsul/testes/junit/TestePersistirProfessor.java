@@ -42,17 +42,17 @@ public class TestePersistirProfessor {
 	try {
 	    Professor prof = new Professor();
 	    
-	    prof.setNome("Maria");
-	    prof.setEmail("maria@gmail.com");
+	    prof.setNome("Marcelo");
+	    prof.setEmail("marcelo@gmail.com");
 //	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("15/10/1999");
+	    Date dtN = sdf.parse("01/08/1997");
 	    Calendar dtC = Calendar.getInstance();
 	    dtC.setTime(dtN);
 	    prof.setNascimento(dtC);
 	    
 	    prof.setTitulacao("Mestre");
-	    prof.setTopicosInterresse("Segurança de rede");
+	    prof.setTopicosInterresse("Algoritmos");
 	    prof.setEspecialidades(em.find(Especialidades.class, 1));
 	    
 	    em.getTransaction().begin();
