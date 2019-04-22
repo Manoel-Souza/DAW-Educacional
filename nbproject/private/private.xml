@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="DAW"/>
+        <group name="DAW">
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/src/br/edu/ifsul/modelo/Disciplina.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/src/br/edu/ifsul/modelo/Curso.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/test/br/edu/ifsul/testes/junit/TestePersistirNota.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/src/br/edu/ifsul/modelo/Nota.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/src/br/edu/ifsul/modelo/Aluno.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/test/br/edu/ifsul/testes/junit/TestePersistirAluno.java</file>
+            <file>file:/C:/IFSUL/Semestre5/2019_1/DAW/DAW-Educacional/test/br/edu/ifsul/testes/junit/TestePersistirDisciplina.java</file>
+        </group>
     </open-files>
 </project-private>

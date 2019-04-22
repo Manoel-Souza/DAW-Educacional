@@ -42,10 +42,10 @@ public class TestePersistirCurso {
     public void teste(){
 	try {
 	    
-//	    Disciplina dis = new Disciplina();
-//	    //dis.setNome("Algoritmos");
-//	    dis.setNome(em.find(Disciplina.class, 1));
-//	    //dis.setNome("teste");
+	    Disciplina dis = new Disciplina();
+	    dis.setNome("Algoritmos");
+	    //dis.setNome(em.find(Disciplina.class, 1));
+	    dis.setNome("teste");
 
 // -----------------------------------------------------------------------------------------------------------------
 
