@@ -46,7 +46,9 @@ public class TestePersistirCurso {
 //	    //dis.setNome("Algoritmos");
 //	    dis.setNome(em.find(Disciplina.class, 1));
 //	    //dis.setNome("teste");
-	    
+
+// -----------------------------------------------------------------------------------------------------------------
+
 	    Curso cur = new Curso();
 	    
 	    cur.setNome("Sistemas");

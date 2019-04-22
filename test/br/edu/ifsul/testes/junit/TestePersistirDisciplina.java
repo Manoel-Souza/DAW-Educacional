@@ -6,7 +6,11 @@
 package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
+import br.edu.ifsul.modelo.Aluno;
 import br.edu.ifsul.modelo.Disciplina;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.EntityManager;
 import org.junit.After;
 import org.junit.Before;
@@ -43,9 +47,23 @@ public class TestePersistirDisciplina {
 	    disc.setCargaHoraria(4.5);
 	    disc.setConhecimentosMininos("Programação em java e logica de programaçao");
 	    
+// -----------------------------------------------------------------------------------------------------------------
+	     Aluno a = new Aluno();
+	    
+	    a.setNome("Manoel");
+	    
+	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	    Date dtN = sdf.parse("12/11/2000");
+	    Calendar dtC = Calendar.getInstance();
+	    dtC.setTime(dtN);
+	    a.setNascimento(dtC);	    
+	    a.setEmail("manoel@gmail.com");
+	    
+// -----------------------------------------------------------------------------------------------------------------	    
 	    
 	    em.getTransaction().begin();
 	    em.persist(disc);
+	    em.persist(a);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();
