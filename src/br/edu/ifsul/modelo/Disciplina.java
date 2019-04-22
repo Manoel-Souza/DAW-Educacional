@@ -59,8 +59,8 @@ public class Disciplina implements Serializable{
     @Column(name = "conhecimentosMininos", nullable = false)
     private String conhecimentosMininos;
     
-//    @OneToMany(mappedBy = "nota", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    private List<Nota> nota = new ArrayList<>();
+    @OneToMany(mappedBy = "nota", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Nota> nota = new ArrayList<>();
     
     @ManyToOne
     @JoinColumn(name = "curso", referencedColumnName = "id", nullable = false)//objeto
@@ -124,13 +124,16 @@ public class Disciplina implements Serializable{
 	//p.adicionarPessoaDesejo(this);
     }
     
-//    public List<Nota> getNota() {
-//	return nota;
-//    }
-//
-//    public void setNota(List<Nota> nota) {
-//	this.nota = nota;
-//    }
+    public List<Nota> getNota() {
+	return nota;
+    }
+
+    public void setNota(List<Nota> nota) {
+	this.nota = nota;
+//	nota1 = nota.getNota1();
+//	nota2 = nota.getNota2();
+//	media = (nota1*nota2)/2;
+    }
 //
     public Curso getCurso() {
 	return curso;
@@ -144,6 +147,7 @@ public class Disciplina implements Serializable{
 //	nota.add(nt);
 //	nota1 += nt.getNota1();
 //	nota2 += nt.getNota2();
+//	media = (nota1*nota2)/2;
 //    }
 //    
 //    public void removeNotas(Nota nt){
