@@ -42,15 +42,15 @@ public class TestePersistirAluno {
 	try {
 	    Aluno a = new Aluno();
 	    
-	    a.setNome("Manoel");
+	    a.setNome("Marcos");
 	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("12/11/2000");
+	    Date dtN = sdf.parse("18/01/2002");
 	    Calendar dtC = Calendar.getInstance();
 	    dtC.setTime(dtN);
 	    a.setNascimento(dtC);
 	    
-	    a.setEmail("manoel@gmail.com");
+	    a.setEmail("marcos@gmail.com");
 	    
 	    em.getTransaction().begin();
 	    em.persist(a);
