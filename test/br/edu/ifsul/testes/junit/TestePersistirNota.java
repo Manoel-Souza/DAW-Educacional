@@ -38,7 +38,7 @@ public class TestePersistirNota {
     public void teste(){
 	try {
 	    Nota n = new Nota();
-	    n.setAluno(em.find(Aluno.class, 49));
+	    n.setAluno(em.find(Aluno.class, 53));
 	    n.setNota1(6.0);
 	    n.setNota2(7.1);
 	    n.calculaMedia(); //resultado da media
