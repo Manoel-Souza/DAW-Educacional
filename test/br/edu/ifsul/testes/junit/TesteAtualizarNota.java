@@ -37,7 +37,7 @@ public class TesteAtualizarNota {
     @Test
     public void teste(){
 	try {
-	    Nota n = new Nota();
+	    Nota n = em.find(Nota.class, 1);
 	    n.setAluno(em.find(Aluno.class, 16));
 	    n.setNota1(6.0);
 	    n.setNota2(7.1);

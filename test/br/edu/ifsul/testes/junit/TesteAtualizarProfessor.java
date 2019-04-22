@@ -40,19 +40,19 @@ public class TesteAtualizarProfessor {
     @Test
     public void teste(){
 	try {
-	    Professor prof = new Professor();
+	    Professor prof = em.find(Professor.class, 24);
 	    
-	    prof.setNome("Joao");
-//	    prof.setEmail("joao@gmail.com");
+	    prof.setNome("Luiz");
+	    prof.setEmail("luiz@gmail.com");
 //	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("12/11/1998");
+	    Date dtN = sdf.parse("07/09/1995");
 	    Calendar dtC = Calendar.getInstance();
 	    dtC.setTime(dtN);
 	    prof.setNascimento(dtC);
 	    
 	    prof.setTitulacao("Mestre");
-	    prof.setTopicosInterresse("Redes, Algoritmos, Segurança");
+	    prof.setTopicosInterresse("Algoritmos");
 	    prof.setEspecialidades(em.find(Especialidades.class, 1));
 	    
 	    em.getTransaction().begin();

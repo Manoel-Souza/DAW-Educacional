@@ -46,7 +46,7 @@ public class TesteAtualizarCurso {
 //	    dis.setNome(em.find(Disciplina.class, 1));
 //	    //dis.setNome("teste");
 	    
-	    Curso cur = new Curso();
+	    Curso cur = em.find(Curso.class, 1);
 	    
 	    cur.setNome("Sistemas");
 	    cur.setSigla("CS");

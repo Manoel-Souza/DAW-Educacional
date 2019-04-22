@@ -35,7 +35,7 @@ public class TesteRemoverProfessor {
     
     @Test
     public void teste(){
-	Professor prof = em.find(Professor.class, 1);
+	Professor prof = em.find(Professor.class, 42);
 	em.getTransaction().begin();
 	em.remove(prof);
 	em.getTransaction().commit();

@@ -36,7 +36,7 @@ public class TesteAtualizarEspecialidades {
     @Test
     public void teste(){
 	try {
-	    Especialidades esp = new Especialidades();
+	    Especialidades esp = em.find(Especialidades.class, 1);
 	    
 	    esp.setNome("Redes");
 	    

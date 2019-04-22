@@ -39,7 +39,7 @@ public class TesteAtualizarAluno {
     @Test
     public void teste(){
 	try {
-	    Aluno a = new Aluno();
+	    Aluno a = em.find(Aluno.class, 1);
 	    
 	    a.setNome("Manoel");
 	    

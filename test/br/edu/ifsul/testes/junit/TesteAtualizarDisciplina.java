@@ -36,7 +36,7 @@ public class TesteAtualizarDisciplina {
     @Test
     public void teste(){
 	try {
-	    Disciplina disc = new Disciplina();
+	    Disciplina disc = em.find(Disciplina.class, 1);
 	    
 	    disc.setNome("Algoritmos");
 	    disc.setDescricao("Algoritmos de programaçãom em java");

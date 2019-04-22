@@ -39,7 +39,7 @@ public class TesteAtualizarInstituicao {
     @Test
     public void teste(){
 	try {
-	    Instituicao inst = new Instituicao();
+	    Instituicao inst = em.find(Instituicao.class, 1);
 	    inst.setNome("Instituto Federal");
 	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
