@@ -25,14 +25,14 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Professor extends Aluno implements Serializable{ //  extensão Aluno (Herança)
     
-    @Column(name = "titulacao", nullable = false)
+    @Column(name = "titulacao")
     private String titulacao;
      
-    @Column(name = "topicosInterresse", nullable = false) 
+    @Column(name = "topicosInterresse") 
     private String topicosInterresse;
     
     @ManyToOne
-    @JoinColumn(name = "especialidades", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "especialidades", referencedColumnName = "id")
     private Especialidades especialidades;
 
     public Professor() {
