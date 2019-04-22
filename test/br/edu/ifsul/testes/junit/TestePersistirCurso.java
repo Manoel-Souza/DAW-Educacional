@@ -69,6 +69,7 @@ public class TestePersistirCurso {
 	    
 	    em.getTransaction().begin();
 	    em.persist(cur);
+	    em.persist(dis);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();
