@@ -50,14 +50,14 @@ public class TestePersistirDisciplina {
 // -----------------------------------------------------------------------------------------------------------------
 	     Aluno a = new Aluno();
 	    
-	    a.setNome("Manoel");
+	    a.setNome("Luiza");
 	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("12/11/2000");
+	    Date dtN = sdf.parse("23/02/2002");
 	    Calendar dtC = Calendar.getInstance();
 	    dtC.setTime(dtN);
 	    a.setNascimento(dtC);	    
-	    a.setEmail("manoel@gmail.com");
+	    a.setEmail("luisa@gmail.com");
 	    
 // -----------------------------------------------------------------------------------------------------------------	    
 	    
