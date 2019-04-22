@@ -59,12 +59,12 @@ public class Disciplina implements Serializable{
     @Column(name = "conhecimentosMininos", nullable = false)
     private String conhecimentosMininos;
     
-    @OneToMany(mappedBy = "nota", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Nota> nota = new ArrayList<>();
+//    @OneToMany(mappedBy = "nota", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+//    private List<Nota> nota = new ArrayList<>();
     
     @ManyToOne
-    @JoinColumn(name = "curso", referencedColumnName = "id", nullable = false)//objeto
     @ForeignKey(name = "fk_curso")
+    @JoinColumn(name = "curso", referencedColumnName = "id", nullable = false)//objeto    
     private Curso curso;
     
 //    @ManyToMany
@@ -124,13 +124,13 @@ public class Disciplina implements Serializable{
 //	//p.adicionarPessoaDesejo(this);
 //    }
     
-    public List<Nota> getNota() {
-	return nota;
-    }
-
-    public void setNota(List<Nota> nota) {
-	this.nota = nota;
-    }
+//    public List<Nota> getNota() {
+//	return nota;
+//    }
+//
+//    public void setNota(List<Nota> nota) {
+//	this.nota = nota;
+//    }
 //
     public Curso getCurso() {
 	return curso;

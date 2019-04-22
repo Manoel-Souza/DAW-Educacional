@@ -129,16 +129,17 @@ public class Curso implements Serializable{
     
     public void addDisciplina(Disciplina dis){
 	disciplina.add(dis);
-	//nome += dis.getNome();
+	dis.setCurso(this);
     }
-////    
-//    public void removeDisciplina(Disciplina dis){
-//	disciplina.remove(dis);
-////	nome -= dis.getNome();
-//	//vi.setVendas(null);
-//	//limpar venda de vendas itens
-//    }
+//    
+    public void removeDisciplina(Disciplina dis){
+	disciplina.remove(dis);
+    }
 
+    public void removeDisciplina(int index){
+	disciplina.remove(index);
+    }
+    
     @Override
     public int hashCode() {
 	int hash = 3;
