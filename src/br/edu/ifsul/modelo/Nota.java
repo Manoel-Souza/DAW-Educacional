@@ -50,10 +50,10 @@ public class Nota implements Serializable{
     @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)//objeto
     private Aluno aluno;
     
-    @ManyToOne
-    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false)//objeto
-    @ForeignKey(name = "fk_disciplina")
-    private Disciplina disciplina;
+//    @ManyToOne
+//    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false)//objeto
+//    @ForeignKey(name = "fk_disciplina")
+//    private Disciplina disciplina;
 
     public Nota() {
     }
@@ -97,6 +97,10 @@ public class Nota implements Serializable{
     public void setAluno(Aluno aluno) {
 	this.aluno = aluno;
     }
+    
+    public void calculaMedia(){
+	media=(nota1+nota2)/2;
+    }
 
     @Override
     public int hashCode() {
@@ -123,16 +127,16 @@ public class Nota implements Serializable{
 	return true;
     }
 
-    public Disciplina getDisciplina() {
-	return disciplina;
-    }
-
-    public void setDisciplina(Disciplina disciplina) {
-	this.disciplina = disciplina;
-    }
-
-    public void getAluno(Aluno find) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public Disciplina getDisciplina() {
+//	return disciplina;
+//    }
+//
+//    public void setDisciplina(Disciplina disciplina) {
+//	this.disciplina = disciplina;
+//    }
+//
+//    public void getAluno(Aluno find) {
+//	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
 }

@@ -67,14 +67,14 @@ public class Disciplina implements Serializable{
     @ForeignKey(name = "fk_curso")
     private Curso curso;
     
-    @ManyToMany
-    @JoinTable(name = "matricula", 
-	joinColumns = 
-	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false), 
-	inverseJoinColumns = 
-	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)
-    )
-    private Set<Aluno> listaMatricula = new HashSet<>();//fazer a relação com a classe aluno sendo que é uma relação muito para muitos
+//    @ManyToMany
+//    @JoinTable(name = "matricula", 
+//	joinColumns = 
+//	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false), 
+//	inverseJoinColumns = 
+//	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)
+//    )
+//    private Set<Aluno> listaMatricula = new HashSet<>();//fazer a relação com a classe aluno sendo que é uma relação muito para muitos
 
     public Disciplina() {
     }
@@ -119,10 +119,10 @@ public class Disciplina implements Serializable{
 	this.conhecimentosMininos = conhecimentosMininos;
     }
 
-    public void adicionarProdutoDesejo(Aluno a){
-	listaMatricula.add(a);
-	//p.adicionarPessoaDesejo(this);
-    }
+//    public void adicionarProdutoDesejo(Aluno a){
+//	listaMatricula.add(a);
+//	//p.adicionarPessoaDesejo(this);
+//    }
     
     public List<Nota> getNota() {
 	return nota;
@@ -130,9 +130,6 @@ public class Disciplina implements Serializable{
 
     public void setNota(List<Nota> nota) {
 	this.nota = nota;
-//	nota1 = nota.getNota1();
-//	nota2 = nota.getNota2();
-//	media = (nota1*nota2)/2;
     }
 //
     public Curso getCurso() {
@@ -143,19 +140,6 @@ public class Disciplina implements Serializable{
 	this.curso = curso;
     }
     
-//    public void addNotas(Nota nt){
-//	nota.add(nt);
-//	nota1 += nt.getNota1();
-//	nota2 += nt.getNota2();
-//	media = (nota1*nota2)/2;
-//    }
-//    
-//    public void removeNotas(Nota nt){
-//	nota.remove(nt);
-//	nota1 -= nt.getNota1();
-//	nota2 -= nt.getNota2();
-//    }
-
     @Override
     public int hashCode() {
 	int hash = 5;

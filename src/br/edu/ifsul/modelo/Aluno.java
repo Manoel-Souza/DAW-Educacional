@@ -50,14 +50,14 @@ public class Aluno implements Serializable{
     @Column(name = "nascimento", nullable = false)
     private Calendar nascimento;
     
-    @ManyToMany
-    @JoinTable(name = "matricula", 
-	joinColumns = 
-	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false), 
-	inverseJoinColumns = 
-	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false)
-    )
-    private Set<Disciplina> listaMatriculam = new HashSet<>();//fazer a relação com a classe Disciplina sendo que é uma relação muito para muitos
+//    @ManyToMany
+//    @JoinTable(name = "matricula", 
+//	joinColumns = 
+//	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false), 
+//	inverseJoinColumns = 
+//	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false)
+//    )
+//    private Set<Disciplina> listaMatriculam = new HashSet<>();//fazer a relação com a classe Disciplina sendo que é uma relação muito para muitos
 
     public Aluno() {
     }
@@ -94,14 +94,14 @@ public class Aluno implements Serializable{
 	this.nascimento = nascimento;
     }
     
-     public void adicionarDisciplinaMatricula(Disciplina d){
-	listaMatriculam.add(d);
-	
-    }
-    
-    public void removerDisciplinaMatricula(Disciplina d){
-	listaMatriculam.remove(d);
-    }
+//     public void adicionarDisciplinaMatricula(Disciplina d){
+//	listaMatriculam.add(d);
+//	
+//    }
+//    
+//    public void removerDisciplinaMatricula(Disciplina d){
+//	listaMatriculam.remove(d);
+//    }
 
     @Override
     public int hashCode() {
