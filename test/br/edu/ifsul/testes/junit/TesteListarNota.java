@@ -1,16 +1,13 @@
-package br.edu.ifsul.testes.junit;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
-import br.edu.ifsul.modelo.Aluno;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import br.edu.ifsul.modelo.Nota;
+import java.util.List;
 import javax.persistence.EntityManager;
 import org.junit.After;
 import org.junit.Before;
@@ -21,10 +18,10 @@ import static org.junit.Assert.*;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class TestePersistirAluno {
+public class TesteListarNota {
     
     EntityManager em;
-    public TestePersistirAluno() {
+    public TesteListarNota() {
     }
     
     @Before
@@ -34,31 +31,23 @@ public class TestePersistirAluno {
     
     @After
     public void tearDown() {
-	em.close();
     }
     
     @Test
     public void teste(){
+	// o teste não deve gerar exceção se tudo estiver correto
+	boolean exception = false;
 	try {
-	    Aluno a = new Aluno();
+	    List<Nota> lista = em.createQuery("from Nota order by nome").getResultList();
+	    for (Nota n : lista) {
+	     System.out.println("ID: " + n.getId() + ", NOME: " + n.getAluno() + ", NOTA1: " + n.getNota1()+ ", NOTA2: " + n.getNota2()  + ", MEDIA: " + n.getMedia());
+	    }
 	    
-	    a.setNome("Manoel");
-	    
-	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("18/01/2002");
-	    Calendar dtC = Calendar.getInstance();
-	    dtC.setTime(dtN);
-	    a.setNascimento(dtC);
-	    
-	    a.setEmail("manoel@gmail.com");
-	    
-	    em.getTransaction().begin();
-	    em.persist(a);
-	    em.getTransaction().commit();
 	} catch (Exception e) {
-	     e.printStackTrace();
+	    e.printStackTrace();
 	    System.out.println("Erro: "+e);
 	}
+	
     }
     
 }

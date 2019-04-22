@@ -6,11 +6,8 @@
 package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
-import br.edu.ifsul.modelo.Especialidades;
-import br.edu.ifsul.modelo.Professor;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import br.edu.ifsul.modelo.Aluno;
+import br.edu.ifsul.modelo.Nota;
 import javax.persistence.EntityManager;
 import org.junit.After;
 import org.junit.Before;
@@ -21,10 +18,10 @@ import static org.junit.Assert.*;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class TesteAtualizarProfessor {
+public class TesteAtualizarNota {
     
     EntityManager em;
-    public TesteAtualizarProfessor() {
+    public TesteAtualizarNota() {
     }
     
     @Before
@@ -40,30 +37,19 @@ public class TesteAtualizarProfessor {
     @Test
     public void teste(){
 	try {
-	    Professor prof = em.find(Professor.class, 49);
-	    
-	    prof.setNome("Joana");
-	    prof.setEmail("joana@gmail.com");
-//	    
-	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	    Date dtN = sdf.parse("07/09/1995");
-	    Calendar dtC = Calendar.getInstance();
-	    dtC.setTime(dtN);
-	    prof.setNascimento(dtC);
-	    
-	    prof.setTitulacao("Mestre");
-	    prof.setTopicosInterresse("Algoritmos");
-	    prof.setEspecialidades(em.find(Especialidades.class, 1));
+	    Nota n = em.find(Nota.class, 4);
+	    n.setAluno(em.find(Aluno.class, 16));
+	    n.setNota1(6.0);
+	    n.setNota2(7.1);
+	    n.calculaMedia(); //resultado da media
 	    
 	    em.getTransaction().begin();
-	    em.persist(prof);
-	    em.merge(prof);//equivalente o update
+	    em.merge(n);//equivalente o update
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();
 	    System.out.println("Erro: "+e);
 	}
     }
-    
     
 }
