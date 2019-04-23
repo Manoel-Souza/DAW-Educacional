@@ -57,7 +57,7 @@ public class Disciplina implements Serializable{
     @Column(name = "cargaHoraria")
     private Double cargaHoraria;
     
-    @Column(name = "conhecimentosMininos")
+    @Column(name = "conhecimentosMininos", columnDefinition = "text")
     private String conhecimentosMininos;
     
     @OneToMany(mappedBy = "disciplina", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

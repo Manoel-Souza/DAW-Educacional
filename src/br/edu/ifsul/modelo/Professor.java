@@ -29,7 +29,7 @@ public class Professor extends Aluno implements Serializable{ //  extensão Alun
     @Column(name = "titulacao")
     private String titulacao;
      
-    @Column(name = "topicosInterresse") 
+    @Column(name = "topicosInterresse", columnDefinition = "text") 
     private String topicosInterresse;
     
     @ManyToOne

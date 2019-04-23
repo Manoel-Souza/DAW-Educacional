@@ -49,10 +49,10 @@ public class Curso implements Serializable{
     @Column(name = "nome", nullable = false, length = 30)
     private String nome;
     
-    @Column(name = "sigla", nullable = false)
+    @Column(name = "sigla")
     private String sigla;
     
-    @Column(name = "descricao", nullable = false)
+    @Column(name = "descricao", columnDefinition = "text")
     private String descricao;
     
     @Column(name = "ativo", nullable = false)
