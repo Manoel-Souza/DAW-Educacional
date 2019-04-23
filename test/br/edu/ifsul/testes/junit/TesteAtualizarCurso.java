@@ -7,6 +7,7 @@ package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
 import br.edu.ifsul.modelo.Curso;
+import br.edu.ifsul.modelo.Disciplina;
 import br.edu.ifsul.modelo.Instituicao;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -41,10 +42,11 @@ public class TesteAtualizarCurso {
     public void teste(){
 	try {
 	    
-//	    Disciplina dis = new Disciplina();
-//	    //dis.setNome("Algoritmos");
-//	    dis.setNome(em.find(Disciplina.class, 1));
-//	    //dis.setNome("teste");
+	    Disciplina dis = new Disciplina();
+	    dis.setNome("Algoritmos");
+	    dis.setNome("teste");
+
+// -----------------------------------------------------------------------------------------------------------------
 	    
 	    Curso cur = em.find(Curso.class, 1);
 	    
@@ -61,7 +63,7 @@ public class TesteAtualizarCurso {
 	    
 	    cur.setInstituicao(em.find(Instituicao.class, 1));
 	    
-//	    cur.addDisciplina(dis);
+	    cur.addDisciplina(dis);
 	    
 	    
 	    em.getTransaction().begin();
