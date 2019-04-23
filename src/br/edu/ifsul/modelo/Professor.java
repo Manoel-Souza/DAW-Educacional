@@ -19,6 +19,7 @@ import javax.persistence.Table;
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
+ * * @author Manoel Souza
  */
 @Entity
 @Table(name = "professor")

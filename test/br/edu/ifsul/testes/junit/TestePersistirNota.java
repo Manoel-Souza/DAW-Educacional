@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
+ * * @author Manoel Souza
  */
 public class TestePersistirNota {
     

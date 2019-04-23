@@ -22,6 +22,7 @@ import org.hibernate.validator.constraints.NotBlank;
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
+ * * @author Manoel Souza
  */
 @Entity
 @Table(name = "especialidades")
