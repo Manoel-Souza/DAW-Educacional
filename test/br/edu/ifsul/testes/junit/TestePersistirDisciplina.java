@@ -45,7 +45,7 @@ public class TestePersistirDisciplina {
 	try {
 	     Aluno a = new Aluno();
 	    
-	    a.setNome("Luiza");
+	    a.setNome("Marcia");
 	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	    Date dtN = sdf.parse("23/02/2002");
@@ -58,7 +58,7 @@ public class TestePersistirDisciplina {
 	    
 	     Nota n = new Nota();
 	    
-	    n.setAluno(em.find(Aluno.class, 53));
+	    n.setAluno(em.find(Aluno.class, 73));
 	    n.setNota1(6.00);
 	    n.setNota2(7.10);
 	    n.calculaMedia();//resultado da media
