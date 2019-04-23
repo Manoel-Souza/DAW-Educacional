@@ -67,14 +67,14 @@ public class Disciplina implements Serializable{
     @JoinColumn(name = "curso", referencedColumnName = "id", nullable = false)//objeto    
     private Curso curso;
     
-//    @ManyToMany
-//    @JoinTable(name = "matricula", 
-//	joinColumns = 
-//	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false), 
-//	inverseJoinColumns = 
-//	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)
-//    )
-//    private Set<Aluno> listaMatricula = new HashSet<>();//fazer a relação com a classe aluno sendo que é uma relação muito para muitos
+    @ManyToMany
+    @JoinTable(name = "matricula", 
+	joinColumns = 
+	    @JoinColumn(name = "disciplina", referencedColumnName = "id", nullable = false), 
+	inverseJoinColumns = 
+	    @JoinColumn(name = "aluno", referencedColumnName = "id", nullable = false)
+    )
+    private Set<Aluno> listaMatricula = new HashSet<>();//fazer a relação com a classe aluno sendo que é uma relação muito para muitos
 
     public Disciplina() {
     }
@@ -138,6 +138,11 @@ public class Disciplina implements Serializable{
 
     public void setCurso(Curso curso) {
 	this.curso = curso;
+    }
+    
+    public void adicionaMatricula(Aluno a){
+	listaMatricula.add(a);
+	//a.adicionaMatricula(this);
     }
     
     @Override

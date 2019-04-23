@@ -43,6 +43,18 @@ public class TestePersistirDisciplina {
     @Test
     public void teste(){
 	try {
+	     Aluno a = new Aluno();
+	    
+	    a.setNome("Luiza");
+	    
+	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	    Date dtN = sdf.parse("23/02/2002");
+	    Calendar dtC = Calendar.getInstance();
+	    dtC.setTime(dtN);
+	    a.setNascimento(dtC);	    
+	    a.setEmail("luisa@gmail.com");
+	    
+// -----------------------------------------------------------------------------------------------------------------	    
 	    
 	     Nota n = new Nota();
 	    
@@ -63,21 +75,11 @@ public class TestePersistirDisciplina {
 	    disc.addNota(n);
 	    
 // -----------------------------------------------------------------------------------------------------------------
-//	     Aluno a = new Aluno();
-//	    
-//	    a.setNome("Luiza");
-//	    
-//	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//	    Date dtN = sdf.parse("23/02/2002");
-//	    Calendar dtC = Calendar.getInstance();
-//	    dtC.setTime(dtN);
-//	    a.setNascimento(dtC);	    
-//	    a.setEmail("luisa@gmail.com");
 	    
-// -----------------------------------------------------------------------------------------------------------------	    
 	    
 	    em.getTransaction().begin();
 	    em.persist(disc);
+	    em.persist(a);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();
