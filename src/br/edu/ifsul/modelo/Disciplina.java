@@ -131,15 +131,7 @@ public class Disciplina implements Serializable{
     public void removeNota(int index){
 	nota.remove(index);
     }
-    
-//    public List<Nota> getNota() {
-//	return nota;
-//    }
-//
-//    public void setNota(List<Nota> nota) {
-//	this.nota = nota;
-//    }
-//
+
     public Curso getCurso() {
 	return curso;
     }
