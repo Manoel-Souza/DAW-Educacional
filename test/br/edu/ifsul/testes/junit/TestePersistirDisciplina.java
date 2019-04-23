@@ -6,9 +6,11 @@
 package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
+import br.edu.ifsul.modelo.Aluno;
 import br.edu.ifsul.modelo.Curso;
 //import br.edu.ifsul.modelo.Aluno;
 import br.edu.ifsul.modelo.Disciplina;
+import br.edu.ifsul.modelo.Nota;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -41,6 +43,15 @@ public class TestePersistirDisciplina {
     @Test
     public void teste(){
 	try {
+	    
+	     Nota n = new Nota();
+	    
+	    n.setAluno(em.find(Aluno.class, 53));
+	    n.setNota1(6.00);
+	    n.setNota2(7.10);
+	    n.calculaMedia();//resultado da media
+
+// -----------------------------------------------------------------------------------------------------------------	    
 	    Disciplina disc = new Disciplina();
 	    
 	    disc.setNome("Algoritmos");
@@ -48,6 +59,8 @@ public class TestePersistirDisciplina {
 	    disc.setCargaHoraria(4.5);
 	    disc.setConhecimentosMininos("Programação em java e logica de programaçao");
 	    disc.setCurso(em.find(Curso.class, 43));
+	    
+	    disc.addNota(n);
 	    
 // -----------------------------------------------------------------------------------------------------------------
 //	     Aluno a = new Aluno();
@@ -65,7 +78,6 @@ public class TestePersistirDisciplina {
 	    
 	    em.getTransaction().begin();
 	    em.persist(disc);
-//	    em.persist(a);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();

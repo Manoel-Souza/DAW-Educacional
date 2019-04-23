@@ -42,10 +42,9 @@ public class TestePersistirCurso {
     public void teste(){
 	try {
 	    
-//	    Disciplina dis = new Disciplina();
-//	    dis.setNome("Algoritmos");
-//	    //dis.setNome(em.find(Disciplina.class, 1));
-//	    dis.setNome("teste");
+	    Disciplina dis = new Disciplina();
+	    dis.setNome("Algoritmos");
+	    dis.setNome("teste");
 
 // -----------------------------------------------------------------------------------------------------------------
 
@@ -64,12 +63,11 @@ public class TestePersistirCurso {
 	    
 	    cur.setInstituicao(em.find(Instituicao.class, 1));
 	    
-//	    cur.addDisciplina(dis);
+	    cur.addDisciplina(dis);
 	    
 	    
 	    em.getTransaction().begin();
 	    em.persist(cur);
-	    //em.persist(dis);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();
