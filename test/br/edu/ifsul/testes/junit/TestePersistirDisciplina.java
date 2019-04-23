@@ -59,11 +59,12 @@ public class TestePersistirDisciplina {
 	    
 	     Nota n = new Nota();
 	    
-	    n.setAluno(em.find(Aluno.class, 73));
+	    n.setAluno(a);
 	    n.setNota1(6.00);
 	    n.setNota2(7.10);
 	    n.calculaMedia();//resultado da media
 
+	    
 // -----------------------------------------------------------------------------------------------------------------	    
 	    Disciplina disc = new Disciplina();
 	    
@@ -74,13 +75,17 @@ public class TestePersistirDisciplina {
 	    disc.setCurso(em.find(Curso.class, 43));
 	    
 	    disc.addNota(n);
+	    disc.adicionaMatricula(a);
+	    System.out.println("nota: "+n);
 	    
 // -----------------------------------------------------------------------------------------------------------------
 	    
 	    
 	    em.getTransaction().begin();
-	    em.persist(disc);
+	    
 	    em.persist(a);
+	    em.persist(disc);
+	    em.persist(n);
 	    em.getTransaction().commit();
 	} catch (Exception e) {
 	     e.printStackTrace();

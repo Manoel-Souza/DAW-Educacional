@@ -135,5 +135,12 @@ public class Nota implements Serializable{
     public void setDisciplina(Disciplina disciplina) {
 	this.disciplina = disciplina;
     }
+
+    @Override
+    public String toString() {
+	return "Nota{" + "id=" + id + ", nota1=" + nota1 + ", nota2=" + nota2 + ", media=" + media + ", aluno=" + aluno + ", disciplina=" + disciplina + '}';
+    }
+    
+    
     
 }
