@@ -171,12 +171,5 @@ public class Disciplina implements Serializable{
 	return true;
     }   
 
-    public void adicionarAlunoDesejo(Aluno aluno) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object setListaMatricula() {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
+    
 }
